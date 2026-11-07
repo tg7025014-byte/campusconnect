@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react';
-import { Loader2, Briefcase, Sparkles, ShieldCheck, Pin } from 'lucide-react';
+import { Loader as Loader2, Briefcase, Sparkles, ShieldCheck, Pin } from 'lucide-react';
 import { supabase, type Gig, type Application } from '@/lib/supabase';
 import { useAuth } from '@/context/AuthContext';
 import Header from '@/components/Header';
@@ -185,7 +185,7 @@ export default function App() {
 
       {/* Hero */}
       <section className="border-b border-slate-200 bg-gradient-to-b from-white to-slate-50">
-        <div className="mx-auto max-w-6xl px-4 py-10 sm:px-6 sm:py-14">
+        <div className="mx-auto max-w-[1600px] px-4 py-10 sm:px-6 sm:py-14 lg:px-10">
           <div className="inline-flex items-center gap-1.5 rounded-full bg-emerald-50 px-3 py-1 text-xs font-bold text-emerald-700 ring-1 ring-inset ring-emerald-200">
             <Sparkles className="h-3.5 w-3.5" />
             IIT Madras students only
@@ -212,7 +212,7 @@ export default function App() {
 
       {/* Tag filter */}
       <div className="sticky top-16 z-20 border-b border-slate-200 bg-white/95 backdrop-blur supports-[backdrop-filter]:bg-white/80">
-        <div className="mx-auto max-w-6xl px-4 py-3 sm:px-6">
+        <div className="mx-auto max-w-[1600px] px-4 py-3 sm:px-6 lg:px-10">
           <TagFilter
             tags={FEATURED_TAGS}
             activeTag={activeTag}
@@ -223,7 +223,7 @@ export default function App() {
       </div>
 
       {/* Gig list */}
-      <main className="mx-auto max-w-6xl px-4 py-8 sm:px-6 sm:py-10">
+      <main className="mx-auto max-w-[1600px] px-4 py-8 sm:px-6 sm:py-10 lg:px-10">
         {loading ? (
           <div className="flex flex-col items-center justify-center py-24 text-slate-400">
             <Loader2 className="h-8 w-8 animate-spin text-emerald-500" />
@@ -265,7 +265,7 @@ export default function App() {
                     {pinnedGigs.length}
                   </span>
                 </div>
-                <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
                   {pinnedGigs.map((gig) => (
                     <GigCard
                       key={gig.id}
@@ -294,7 +294,7 @@ export default function App() {
                   No more gigs in this filter.
                 </p>
               ) : (
-                <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+                <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-5">
                   {otherGigs.map((gig) => (
                     <GigCard
                       key={gig.id}
@@ -311,7 +311,7 @@ export default function App() {
       </main>
 
       <footer className="border-t border-slate-200 bg-white">
-        <div className="mx-auto max-w-6xl px-4 py-8 sm:px-6">
+        <div className="mx-auto max-w-[1600px] px-4 py-8 sm:px-6 lg:px-10">
           <p className="text-center text-sm text-slate-400">
             CampusConnect · A student-to-student gig marketplace for the IIT Madras community
           </p>
